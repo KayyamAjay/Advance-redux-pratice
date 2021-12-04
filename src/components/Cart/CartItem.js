@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slics";
 const CartItem = (props) => {
   const { title, quantity, total, price, id } = props.item;
+
   const dispatch = useDispatch();
   const addHandler = () => {
     dispatch(
@@ -20,6 +21,7 @@ const CartItem = (props) => {
   return (
     <li className={classes.item}>
       <header>
+        {console.log(title)}
         <h3>{title}</h3>
         <div className={classes.price}>
           ${total.toFixed(2)}{" "}
